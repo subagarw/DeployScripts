@@ -24,11 +24,11 @@ sudo chmod 777 apache-tomcat-8.5.15/webapps
 logout
 EOF
 sleep 30
-scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
+sudo scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
 sleep 60
 else
 echo "false"
-scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
+sudo scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
 sleep 60
 fi
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
