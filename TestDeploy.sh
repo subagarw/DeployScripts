@@ -21,7 +21,7 @@ EOF
 fi
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 cd testdeploy
-wget -O apache-tomcat-8.5.15/webapps/$ARTIFACT_NAME $ARTIFACT_URL
+sudo wget -O apache-tomcat-8.5.15/webapps/$ARTIFACT_NAME $ARTIFACT_URL
 echo "download success"
 sudo apache-tomcat-8.5.15/bin/startup.sh
 logout
