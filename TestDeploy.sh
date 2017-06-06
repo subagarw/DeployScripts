@@ -25,11 +25,11 @@ logout
 EOF
 sleep 30
 scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
-sleep 30
+sleep 60
 else
 echo "false"
-scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:apache-tomcat-8.5.15/webapps
-sleep 30
+scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
+sleep 60
 fi
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 sudo testdeploy/apache-tomcat-8.5.15/bin/startup.sh
