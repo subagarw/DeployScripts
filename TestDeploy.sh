@@ -3,7 +3,7 @@
 wget -O $ARTIFACT_PATH$ARTIFACT_NAME $ARTIFACT_URL
 echo "download success"
 
-ssh -o 'StrictHostKeyChecking no' $USER@$PUBLIC_IP
+# ssh -o 'StrictHostKeyChecking no' $USER@$PUBLIC_IP
 echo $USER@$PUBLIC_IP
 if [ $CONFIGURE ];
 then
