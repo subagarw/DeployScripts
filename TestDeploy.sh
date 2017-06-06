@@ -7,7 +7,7 @@ echo "download success"
 echo $USER@$PUBLIC_IP
 if [ $CONFIGURE ];
 then
-        ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP <<'EOF'
+        ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
         sudo apt-get update
         sudo mkdir testdeploy
         cd testdeploy
@@ -32,7 +32,7 @@ else
 fi
 
 
-ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP <<'EOF'
+ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 sudo apache-tomcat-8.5.8/bin/startup.sh
 logout
 EOF
