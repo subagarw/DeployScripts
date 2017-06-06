@@ -7,6 +7,7 @@ echo "download success"
 echo $USER@$PUBLIC_IP
 if [ $CONFIGURE ];
 then
+echo "true"
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 sudo apt-get update
 sudo mkdir testdeploy
@@ -24,6 +25,7 @@ sleep 30
 scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:apache-tomcat-8.5.8/webapps
 sleep 30
 else
+echo "false"
 scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:apache-tomcat-8.5.8/webapps
 sleep 30
 fi
