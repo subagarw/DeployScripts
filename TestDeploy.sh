@@ -1,4 +1,6 @@
 #!/bin/bash
+#!/usr/local/bin/expect -f
+
 
 wget -O $ARTIFACT_PATH$ARTIFACT_NAME $ARTIFACT_URL
 echo "download success"
@@ -14,7 +16,10 @@ sudo mkdir testdeploy
 cd testdeploy
 sudo apt-add-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install oracle-java8-installer -y
+sudo apt-get install oracle-java8-installer
+expect "[y/n]"
+sleep 1
+send "y\r"
 sudo wget http://mirror.fibergrid.in/apache/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz
 sudo tar -xzvf apache-tomcat-8.5.15.tar.gz
 sudo chmod 777 apache-tomcat-8.5.15/webapps
