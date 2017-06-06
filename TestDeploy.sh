@@ -15,7 +15,7 @@ cd testdeploy
 sudo apt-get install java-1.8.0 -y
 sudo apt-get install java-1.8.0-openjdk-devel -y
 sudo apt-get remove java-1.7.0-openjdk -y
-sudo wget http://mirrors.koehn.com/apache/tomcat/tomcat-8/v8.5.8/bin/apache-tomcat-8.5.8.tar.gz
+sudo wget http://mirror.fibergrid.in/apache/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz
 sudo tar -xzvf apache-tomcat-8.5.8.tar.gz
 sudo chmod 777 apache-tomcat-8.5.8/webapps
 logout
