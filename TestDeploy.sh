@@ -24,6 +24,7 @@ logout
 EOF
 sleep 30
 scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:testdeploy/apache-tomcat-8.5.15/webapps
+echo "scp successfull"
 sleep 30
 else
 echo "false"
@@ -32,6 +33,9 @@ sleep 30
 fi
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 cd testdeploy
+echo "changing ownership and permission"
+sudo chown root:root apache-tomcat-8.5.15/webapps/aviva.war
+sudo chmod 744 apache-tomcat-8.5.15/bin/startup.sh
 sudo apache-tomcat-8.5.15/bin/startup.sh
 logout
 EOF
