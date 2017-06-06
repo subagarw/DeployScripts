@@ -32,6 +32,6 @@ scp -i $KEY_PATH$KEY_NAME $ARTIFACT_PATH$ARTIFACT_NAME $USER@$PUBLIC_IP:apache-t
 sleep 30
 fi
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
-sudo apache-tomcat-8.5.15/bin/startup.sh
+sudo testdeploy/apache-tomcat-8.5.15/bin/startup.sh
 logout
 EOF
