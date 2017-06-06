@@ -12,9 +12,9 @@ ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 sudo apt-get update
 sudo mkdir testdeploy
 cd testdeploy
-sudo apt-get install java-1.8.0 -y
-sudo apt-get install java-1.8.0-openjdk-devel -y
-sudo apt-get remove java-1.7.0-openjdk -y
+sudo apt-add-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
 sudo wget http://mirror.fibergrid.in/apache/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz
 sudo tar -xzvf apache-tomcat-8.5.15.tar.gz
 sudo chmod 777 apache-tomcat-8.5.15/webapps
