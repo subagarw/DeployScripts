@@ -15,6 +15,7 @@ sudo apt-get update
 yes | sudo apt-get install oracle-java8-installer
 sudo wget http://mirror.fibergrid.in/apache/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz
 sudo tar -xzvf apache-tomcat-8.5.15.tar.gz
+sudo chmod 777 apache-tomcat-8.5.15/webapps
 logout
 EOF
 fi
