@@ -4,12 +4,11 @@ wget -O $ARTIFACT_PATH$ARTIFACT_NAME $ARTIFACT_URL
 echo "download success"
 chmod 777 $ARTIFACT_PATH$ARTIFACT_NAME
 
-
-# ssh -o 'StrictHostKeyChecking no' $USER@$PUBLIC_IP
 echo $USER@$PUBLIC_IP
 if [ $CONFIGURE ];
 then
 echo "true"
+ssh -o 'StrictHostKeyChecking no' $USER@$PUBLIC_IP
 ssh -i $KEY_PATH$KEY_NAME $USER@$PUBLIC_IP << EOF
 sudo apt-get update
 sudo mkdir testdeploy
